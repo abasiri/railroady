@@ -236,10 +236,6 @@ class ModelsDiagram < AppDiagram
       assoc_name = assoc.name.to_s
     end
 
-    # Patch from "alpack" to support classes in a non-root module namespace. See: http://disq.us/yxl1v
-    if class_name.include?("::") && !assoc_class_name.include?("::")
-      assoc_class_name = class_name.split("::")[0..-2].push(assoc_class_name).join("::")
-    end
     assoc_class_name.gsub!(%r{^::}, '')
 
     if %w[has_one references_one embeds_one].include?(macro)
