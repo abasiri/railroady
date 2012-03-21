@@ -35,7 +35,7 @@ namespace :diagram do
     task :complete do
       f = @MODELS_ALL
       puts "Generating #{f}"
-      sh "railroady -ilamM | dot -T#{RailRoady::RakeHelpers.format} > #{f}"
+      sh "railroady -iM | dot -T#{RailRoady::RakeHelpers.format} > #{f}"
     end
 
     desc 'Generates an abbreviated class diagram for all models.'
